@@ -1,0 +1,11 @@
+# Käyttöjärjestelmän tiedostot
+.DS_Store
+Thumbs.db
+
+# Editorin asetukset
+.vscode/
+*.swp
+
+# Muut
+*.psd
+*.ai
