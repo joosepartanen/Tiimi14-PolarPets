@@ -1,0 +1,263 @@
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "osio"
+        "footer";
+    font-family: 'Poppins', sans-serif;
+    grid-template-columns: 1fr;
+    overflow: auto;
+    background-color: snow;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(195, 203, 240);
+    color:rgb(15, 62, 38);
+    overflow: auto;
+    position: sticky;
+    top: 0;
+    box-sizing: border-box;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 800px) {
+.header {
+    margin: 0;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.nav {
+    display: block;        
+    flex-direction: column;
+    background: rgb(195, 203, 240);
+    margin: 2rem;
+  }
+
+}
+
+.otsikko {
+    margin-left: 12rem;
+}
+
+.oikea {
+    color: rgb(15, 62, 38);
+    margin-right: 5rem;
+    justify-content: center;
+}
+
+.nav {
+    grid-area: nav;
+    display: flex;
+    color: rgb(15, 62, 38);
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: Duplicatesans,Arial,sans-serif;
+    border-radius: 20px;
+    gap: 1rem;
+    padding: 1px;
+    margin-top: 2px;
+
+}
+
+.nav a {
+    color: rgb(45, 58, 175);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #007BFF;
+  transform: scale(1.1);
+}
+
+.nav p {
+    margin-top: 1rem;
+}
+
+.aika a {
+    margin-top: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #6e78e1;
+  color: snow;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.btn:hover {
+  background: #6294aa;
+}
+
+.osio {
+    grid-area: osio;
+    display: flex;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;  
+    padding: 1rem;
+    color: rgb(15, 62, 38);
+    background-color: lightcyan;
+    border-radius: 20px;
+    font-size: 25px;
+
+}
+
+.teksti {
+    width: 300px;
+    margin-left: 5rem;
+}
+
+
+@media (max-width: 800px) {
+.osio {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 1rem;
+}
+}
+
+.osio img {
+    border-radius: 20px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+@media (max-width: 800px) {
+.osio img {
+    display: none;
+}
+}
+
+.form {
+    grid-area: form;
+    margin: 0 auto;
+    width: 330px;
+    padding: 5rem;
+    border: 1px solid #ccc;
+    border-radius: 5rem;
+    background-color: rgb(195, 203, 240);
+
+}
+
+@media (max-width: 800px) {
+.form {
+    margin: 0;
+    width: 100%;
+}
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.form li + li {
+    margin-top: 0.5rem;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+    font-size: 0.9rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+input,
+textarea,
+select {
+    font-size: 0.9rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+    width: 300px;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #000;
+}
+textarea {
+    vertical-align: top;
+    height: 5em;
+}
+
+.button {
+    padding-left: 90px;
+}
+
+button {
+    margin-left: 0.5em;
+    padding: 5px;
+    font-size: 0.9rem;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+}
+
+button:after {
+    content: " >";
+}
+
+button:hover,
+button:focus {
+    outline: none;
+    background: #8d8585;
+    color: #fff;
+}
+
+
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    background-color: rgb(195, 203, 240);
+    color: rgb(15, 62, 38);
+    justify-content: space-around;
+    padding: 5rem;
+    box-sizing: border-box;
+    
+}
+
+.info {
+    font-size: 20px;
+}
+
+
+.footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #007BFF;
+  transform: scale(1.1);
+}
