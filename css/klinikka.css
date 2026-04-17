@@ -167,6 +167,14 @@
   margin-bottom: 20px;
 }
 
+.card:nth-child(2) {
+  background-color: #6b74c5;
+} 
+
+.card:nth-child(3n) {
+  background-color: #6b74c5;
+} 
+
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -181,7 +189,7 @@
   background: #6294aa;
 }
 
-.card-images {
+/*.card-images {
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -191,6 +199,14 @@
   width: 200px;
   height: 300px;
   object-fit: cover;
+  border-radius: 6px;
+  
+} */
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
   border-radius: 6px;
 }
 
@@ -211,6 +227,15 @@
     display: none;
 }
 } 
+
+.banneri {
+  display: flex;
+  justify-content: center;
+  background-color: lightcyan;
+}
+.banneri img {
+  border-radius: 6px;
+}
 
 .cta {
  padding: 80px 20px;
