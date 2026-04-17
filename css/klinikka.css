@@ -126,6 +126,10 @@
     margin-right: 1rem;
 }
 
+.teksti {
+  margin: 1rem;
+}
+
 @media (max-width: 800px) {
 .osio img {
     display: none;
@@ -152,6 +156,7 @@
   text-align: center;
   transition: transform 0.2s ease;
   flex: 0 0 calc(33.333% - 20px);
+  object-fit: cover;
 }
 
 .card:hover {
@@ -208,6 +213,7 @@
   height: auto;
   display: block;
   border-radius: 6px;
+  object-fit: cover;
 }
 
 
