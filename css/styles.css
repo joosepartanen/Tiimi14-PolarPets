@@ -198,7 +198,9 @@
 }
 
 .btn:hover {
-  background: #6294aa;
+  background: snow;
+  color: #6e78e1;
+  font-weight: bold;
 }
 
 .card-images {
