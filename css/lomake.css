@@ -3,7 +3,9 @@
     display: grid;
     grid-template-areas:
         "header"
-        "osio"
+        "main"
+        "card"
+        "filler"
         "footer";
     font-family: 'Poppins', sans-serif;
     grid-template-columns: 1fr;
@@ -26,15 +28,13 @@
     box-sizing: border-box;
 }
 
-.menu-toggle {
-  display: none;
-}
 
 @media (max-width: 800px) {
 .header {
+    display: flex;
     margin: 0;
-    justify-content: flex-end;
-    gap: 2rem;
+    flex-direction: column;
+    gap: none;
 }
 
 .nav {
@@ -48,6 +48,12 @@
 
 .otsikko {
     margin-left: 12rem;
+}
+
+@media (max-width: 800px) {
+  .otsikko {
+    margin-left: 0rem;
+  }
 }
 
 .oikea {
@@ -89,24 +95,16 @@
     margin-top: 1rem;
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #6e78e1;
-  color: snow;
-  text-decoration: none;
-  border-radius: 6px;
-  margin-bottom: 15px;
-}
-
-.btn:hover {
-  background: snow;
-  color: #6e78e1;
-  font-weight: bold;
+.main {
+    color: rgb(15, 62, 38);
+    background-color: rgb(114, 181, 217);
+    border-radius: 5px;
+    box-sizing: border-box;
+    
 }
 
 .osio {
-    grid-area: osio;
+    grid-area: main;
     display: flex;
     margin-left: 10rem;
     margin-right: 10rem;
@@ -120,18 +118,12 @@
 
 }
 
-.teksti {
-    width: 300px;
-    margin-left: 5rem;
-}
-
-
 @media (max-width: 800px) {
 .osio {
     display: flex;
     flex-direction: column;
     margin: 0;
-    gap: 1rem;
+    width: 100vw;
 }
 }
 
@@ -139,6 +131,10 @@
     border-radius: 20px;
     margin-left: 1rem;
     margin-right: 1rem;
+}
+
+.teksti {
+  margin: 1rem;
 }
 
 @media (max-width: 800px) {
@@ -160,8 +156,10 @@
 
 @media (max-width: 800px) {
 .form {
+    display: flex;
     margin: 0;
     width: 100%;
+    flex-direction: column;
 }
 }
 
@@ -236,7 +234,21 @@ button:focus {
     color: #fff;
 }
 
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #6e78e1;
+  color: snow;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
 
+.btn:hover {
+  background: snow;
+  color: #6e78e1;
+  font-weight: bold;
+}
 
 .footer {
     grid-area: footer;
@@ -263,3 +275,10 @@ button:focus {
   color: #007BFF;
   transform: scale(1.1);
 }
+
+@media (max-width: 800px) {
+.footer img {
+    display: none;
+    
+}
+} 
