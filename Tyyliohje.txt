@@ -1,6 +1,6 @@
 <!--Värit-->
 Teemaväri:
-background-color: rgb(195, 203, 240);
+background-color: #C3CBF0
 Tekstien väri:
 color: rgb(15, 62, 38);
 
@@ -8,14 +8,22 @@ Sisällölle taustaväri:
 background-color: lightcyan;
 
 Korttien värit:
-background: rgb(195, 203, 240);
-background-color: #7a84dd;
+Vaihtoehto 1:
+background: #c3cbf0;
+Vaihtoehto 2:
+background-color: #b6b8e8;
 
 
 
 
 <!--Typografia:-->
-Sisältötekstien fontti: 25px
+Fontti:
+font-family: 'Poppins', sans-serif;
+
+Sisältötekstien fonttikoko: 
+font-size: 22px;
+Väli:
+line-height: 1.5;
 
 
 
@@ -31,13 +39,12 @@ Ja loppuun (ennen </html>): </body>
 
 <!--Header, johon yhdistetty navigaatio:-->
 
-<header class="header">
+    <header class="header">
         <div class="otsikko">
-        <h1>Polar Pets</h1>
+        <img src="kuvat/logopieni.png" alt="Polar Petsin logo, jossa koiran ja kissan hahmo sekä teksti PolarPets">
         </div>
 
-    <nav class="nav">
-
+            <nav class="nav">
        <a href="index.html">Etusivu</a>
        <a href="klinikka.html">Eläinlääkäri</a>
        <a href="hotelli.html">Lemmikkihotelli</a>
@@ -46,18 +53,17 @@ Ja loppuun (ennen </html>): </body>
        <a href="yhteys.html">Yhteystiedot</a>
     </nav>
 
-        <div class="aika"> <a href="#" class="btn btn-primary">Varaa aika</a></div>
-        <div class="oikea">Päivystys: +358 12345</div>
-</header>
-
+        <div class="aika"> <a href="varaus.html" class="btn btn-primary">Varaa aika</a></div>
+        <div class="oikea">Päivystys: ☎+358 12345</div>
+    </header>
 
 
 ---------------------
 <!--Footer, tulee kaikille sivuille-->
 
     <footer class="footer">
-      <div class="logo">
-        <p>tähän logo</p>
+      <div class="logo"> 
+        <img src="kuvat/logo.png" alt="Polar Pets -logo, jossa koiran ja kissan hahmot ja teksti PolarPets">
       </div>
        <div class="info">
         <h4>Avoinna: 08:00 - 21:00 <br>
@@ -71,18 +77,18 @@ Ja loppuun (ennen </html>): </body>
        </div>
        <div class="kysytyt">
             <br>
-            <a href="ukk.html" class="btn btn-primary">Usein kysytyt kysymykset</a>
+            <a href="hinnasto.html" class="btn btn-primary">Hinnasto</a>
             <br>
+            <a href="lomake.html" class="btn btn-primary">Anna palautetta!</a>
             <br>
-            <br>
-            <a href="#" class="btn btn-primary">Varaa nyt aika verkossa</a>
+            <a href="varaus.html" class="btn btn-primary">Varaa nyt aika verkossa!</a>
        </div>
         <div class="ajanvaraus">
 
             <br>
             <br>
             <br>
-            <h4>Päivystys: +358 12345</h4>
+            <h4>Päivystys: ☎+358 12345</h4>
         </div>
     </footer>
 
@@ -177,15 +183,14 @@ Headerin ja siihen yhdistetyn navigaation pakollinen CSS:
     box-sizing: border-box;
 }
 
-.menu-toggle {
-  display: none;
-}
 
 @media (max-width: 800px) {
 .header {
+    display: flex;
     margin: 0;
-    justify-content: flex-end;
-    gap: 2rem;
+    flex-direction: column;
+    gap: none;
+    position: static;
 }
 
 .nav {
@@ -199,6 +204,12 @@ Headerin ja siihen yhdistetyn navigaation pakollinen CSS:
 
 .otsikko {
     margin-left: 12rem;
+}
+
+@media (max-width: 800px) {
+  .otsikko {
+    margin-left: 0rem;
+  }
 }
 
 .oikea {
@@ -242,7 +253,6 @@ Headerin ja siihen yhdistetyn navigaation pakollinen CSS:
 
 
 
-
 ------------
 Tyypillisen artikkelielementin (.osio) muotoilu:
 
@@ -257,13 +267,15 @@ Tyypillisen artikkelielementin (.osio) muotoilu:
     color: rgb(15, 62, 38);
     background-color: lightcyan;
     border-radius: 20px;
-    font-size: 25px;
+    font-size: 22px;
+    line-height: 1.5;
 
 }
 
 @media (max-width: 800px) {
 .osio {
     margin: 0;
+    width: 100vw;
 }
 }
 
@@ -271,6 +283,10 @@ Tyypillisen artikkelielementin (.osio) muotoilu:
     border-radius: 20px;
     margin-left: 1rem;
     margin-right: 1rem;
+}
+
+.teksti {
+  margin: 1rem;
 }
 
 @media (max-width: 800px) {
@@ -297,6 +313,12 @@ Korttiosion perusmuotoilu:
   box-sizing: border-box;
 }
 
+@media (max-width: 800px) {
+.palvelut {
+    flex-direction: column;
+  }
+}
+
 .card {
   background: rgb(195, 203, 240);
   color: rgb(15, 62, 38);
@@ -307,6 +329,7 @@ Korttiosion perusmuotoilu:
   text-align: center;
   transition: transform 0.2s ease;
   flex: 0 0 calc(33.333% - 20px);
+  object-fit: cover;
 }
 
 .card:hover {
@@ -322,6 +345,14 @@ Korttiosion perusmuotoilu:
   margin-bottom: 20px;
 }
 
+.card:nth-child(2) {
+  background-color: #b6b8e8;
+} 
+
+.card:nth-child(3n) {
+  background-color: #b6b8e8;
+} 
+
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -333,22 +364,18 @@ Korttiosion perusmuotoilu:
 }
 
 .btn:hover {
-  background: #6294aa;
+  background: snow;
+  color: #6e78e1;
+  font-weight: bold;
 }
 
-.card-images {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-}
-
-.card-images img {
-  width: 200px;
-  height: 300px;
-  object-fit: cover;
+.card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
   border-radius: 6px;
+  object-fit: cover;
 }
-
 
 
 
@@ -397,3 +424,51 @@ CTA:n muotoilu:
   background: #e5e7eb;
   transform: translateY(-2px);
 }
+
+
+---------------
+
+Footerin muotoilu:
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    background-color: rgb(195, 203, 240);
+    color: rgb(15, 62, 38);
+    justify-content: space-around;
+    padding: 5rem;
+    box-sizing: border-box;
+    
+}
+
+.info {
+    font-size: 20px;
+}
+
+
+.footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #007BFF;
+  transform: scale(1.1);
+}
+
+@media (max-width: 800px) {
+.footer {
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    gap: none;
+}
+}
+
+
+@media (max-width: 800px) {
+.footer img {
+    display: none;
+    
+}
+} 
