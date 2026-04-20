@@ -283,3 +283,10 @@ button:focus {
     
 }
 } 
+
+@media (max-width: 800px) {
+.footer {
+    display: flex;
+    flex-direction: column;    
+}
+} 
